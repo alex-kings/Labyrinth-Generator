@@ -17,9 +17,9 @@ class Cell{
 }
 
 export class Labyrinth{
-    constructor(cellNumber){
+    constructor(){
 
-        this.cellNumber = cellNumber
+        this.cellNumber = 20
         this.canvas = document.getElementById('canvas')
         this.ctx = canvas.getContext('2d')
         this.cellSize = BOARD_SIZE/this.cellNumber
@@ -27,10 +27,12 @@ export class Labyrinth{
         this.canvas.height = `${BOARD_SIZE}`
         this.cells = []
     
-        this.start()
+        this.start(10)
     }
     
-    start(){
+    start(n){
+        this.cellNumber = n
+        this.cellSize = BOARD_SIZE/this.cellNumber
         this.reset()
         this.depthFirstSearch(this, 0, 0)
         this.printBoard()

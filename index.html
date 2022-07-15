@@ -10,9 +10,15 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 </head>
 <body>
-    <canvas id="canvas"></canvas>
-    <button id="btn">click</button>
-    <script type="module" src="./index.js"></script>
-
+    <div class="main-container">
+        <div class="labyrinth">
+            <canvas id="canvas"></canvas>
+            <div class="input-container">
+                <input id="input" class="input" type="text" placeholder="Enter size"/>
+                <button id="btn" class="btn">Generate</button>
+            </div>
+            <script type="module" src="./index.js"></script>
+        </div>
+    </div>
 </body>
 </html>

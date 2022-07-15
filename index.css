@@ -1,6 +1,46 @@
 canvas{
     background-color: black;
 
-    width: 30rem;
-    height:30rem;
+    width:100%;
+}
+body{
+    height:100vh;
+
+}
+*{
+    padding:0;
+    margin:0;
+    font-size: 1em;
+}
+.main-container{
+    height:100%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.labyrinth{
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+    width:12em;
+}
+.input-container{
+    display:flex;
+    width:100%;
+    justify-content: right;
+    gap:.2em;
+    padding:.2em;
+    
+}
+.input{
+    width:50%;
+    text-align: center;
+}
+.btn{
+    border:1px solid black;
+    background-color: white;
+    padding:.2em 1em;
+    border-radius: .1rem;
+    width:50%;
 }
