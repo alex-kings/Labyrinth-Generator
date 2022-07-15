@@ -18,11 +18,8 @@ class Cell{
 
 export class Labyrinth{
     constructor(){
-
-        this.cellNumber = 20
         this.canvas = document.getElementById('canvas')
         this.ctx = canvas.getContext('2d')
-        this.cellSize = BOARD_SIZE/this.cellNumber
         this.canvas.width = `${BOARD_SIZE}`
         this.canvas.height = `${BOARD_SIZE}`
         this.cells = []
@@ -30,14 +27,17 @@ export class Labyrinth{
         this.start(10)
     }
     
+    // Generate a labyrinth of size n
     start(n){
         this.cellNumber = n
-        this.cellSize = BOARD_SIZE/this.cellNumber
+        this.cellSize = Math.ceil(BOARD_SIZE/this.cellNumber)
+        console.log(this.cellSize)
         this.reset()
         this.depthFirstSearch(this, 0, 0)
         this.printBoard()
     }
 
+    // Resets the board
     reset(){
         // Makes background black
         this.ctx.fillStyle = 'black'
@@ -129,7 +129,7 @@ export class Labyrinth{
         return adjCoord
     }
 
-
+    // Prints the board
     printBoard(){
         this.ctx.fillStyle = 'white'
         for(let i = 0; i < this.cellNumber; i++){
